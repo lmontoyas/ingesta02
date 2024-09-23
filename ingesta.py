@@ -1,12 +1,13 @@
+  GNU nano 6.2                                                     ingesta.py                                                              
 import mysql.connector
 import pandas as pd
 import boto3
 
 # Conectar a la base de datos MySQL
 conn = mysql.connector.connect(
-    host="tu_host_mysql",
-	port="44.221.218.236",
-    user="root", 
+    host="35.174.185.102",
+    port=8083,
+    user="root",
     password="utec",
     database="tienda"
 )
@@ -29,7 +30,7 @@ df.to_csv(csv_file, index=False)
 
 # Subir el archivo CSV a un bucket S3
 s3 = boto3.client('s3')
-bucket_name = "gcr-output-02"
+bucket_name = "gcr-output-5534"
 s3.upload_file(csv_file, bucket_name, csv_file)
 
 print("Ingesta completada y archivo subido a S3")
