@@ -1,4 +1,3 @@
-  GNU nano 6.2                                                     ingesta.py                                                              
 import mysql.connector
 import pandas as pd
 import boto3
@@ -6,7 +5,7 @@ import boto3
 # Conectar a la base de datos MySQL
 conn = mysql.connector.connect(
     host="35.174.185.102",
-    port=8083,
+    port=8005,
     user="root",
     password="utec",
     database="tienda"
